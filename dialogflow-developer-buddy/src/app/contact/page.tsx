@@ -5,6 +5,27 @@ export default function Contact() {
   const contactMethods = [
     {
       icon: <FaEnvelope className="w-6 h-6" />,
+      title: "Email - Shrutika Shripat",
+      value: "shrutikashripat24@gmail.com",
+      description: "Contact Shrutika for technical inquiries and collaboration.",
+      link: "mailto:shrutika.shripat24@gmail.com"
+    },
+    {
+      icon: <FaGithub className="w-6 h-6" />,
+      title: "GitHub - Shrutika Shripat",
+      value: "github.com/shripat213",
+      description: "Explore Shrutika's contributions and repositories.",
+      link: "https://github.com/Shrutika-211998"
+    },
+    {
+      icon: <FaLinkedin className="w-6 h-6" />,
+      title: "LinkedIn - Shrutika Shripat",
+      value: "linkedin.com/in/shrutika-shripat",
+      description: "Connect with Shrutika on LinkedIn.",
+      link: "https://linkedin.com/in/shrutika-shripat"
+    },
+    {
+      icon: <FaEnvelope className="w-6 h-6" />,
       title: "Email - Yash Kavaiya",
       value: "arkavaiya@gmail.com",
       description: "Send me an email for business inquiries or technical support.",
@@ -23,27 +44,6 @@ export default function Contact() {
       value: "linkedin.com/in/yashkavaiya",
       description: "Connect with me professionally on LinkedIn.",
       link: "https://linkedin.com/in/yashkavaiya"
-    },
-    {
-      icon: <FaEnvelope className="w-6 h-6" />,
-      title: "Email - Shrutika Shripat",
-      value: "shrutika.shripat24@gmail.com",
-      description: "Contact Shrutika for technical inquiries and collaboration.",
-      link: "mailto:shrutika.shripat24@gmail.com"
-    },
-    {
-      icon: <FaGithub className="w-6 h-6" />,
-      title: "GitHub - Shrutika Shripat",
-      value: "github.com/shripat213",
-      description: "Explore Shrutika's contributions and repositories.",
-      link: "https://github.com/shripat213"
-    },
-    {
-      icon: <FaLinkedin className="w-6 h-6" />,
-      title: "LinkedIn - Shrutika Shripat",
-      value: "linkedin.com/in/shrutika-shripat",
-      description: "Connect with Shrutika on LinkedIn.",
-      link: "https://linkedin.com/in/shrutika-shripat"
     }
   ];
 
