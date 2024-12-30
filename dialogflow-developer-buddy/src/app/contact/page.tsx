@@ -13,7 +13,7 @@ export default function Contact() {
     {
       icon: <FaGithub className="w-6 h-6" />,
       title: "GitHub - Shrutika Shripat",
-      value: "github.com/shripat213",
+      value: "github.com/Shrutika-211998",
       description: "Explore Shrutika's contributions and repositories.",
       link: "https://github.com/Shrutika-211998"
     },
