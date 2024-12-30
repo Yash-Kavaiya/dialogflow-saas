@@ -1,22 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { FaUsers, FaRobot, FaClock, FaExclamationTriangle, FaSmile, FaPhoneVolume, FaShieldAlt, FaHeadset, FaExchangeAlt } from 'react-icons/fa';
+import { FaUsers, FaRobot, FaClock, FaExclamationTriangle, FaSmile, FaPhoneVolume, FaShieldAlt, FaExchangeAlt } from 'react-icons/fa';
 import {
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
+  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  Legend, ResponsiveContainer, PieChart, Pie, Cell
 } from 'recharts';
 
+// [Previous mockData object remains the same]
 const mockData = {
   dailyStats: [
     { date: '2023-07-01', sessions: 120, matchedIntents: 98, fallbacks: 22 },
@@ -111,14 +101,17 @@ export default function AnalyticsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Analytics Dashboard</h1>
+        <div className="flex justify-between items-center mb-8 bg-gray-800/30 p-6 rounded-xl backdrop-blur-lg shadow-xl">
+          <h1 className="text-4xl font-bold text-white tracking-tight hover:text-blue-400 transition-colors duration-300">
+            Analytics Dashboard
+            <span className="ml-4 text-sm font-normal text-gray-400">Real-time Insights</span>
+          </h1>
           <select
             value={timeRange}
             onChange={(e) => setTimeRange(e.target.value)}
-            className="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="bg-gray-700 text-white rounded-lg px-4 py-2 border border-gray-600 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
           >
             <option value="24h">Last 24 Hours</option>
             <option value="7d">Last 7 Days</option>
@@ -130,17 +123,26 @@ export default function AnalyticsPage() {
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
           {metrics.map((metric, index) => (
-            <div key={index} className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="p-5">
+            <div 
+              key={index} 
+              className="bg-gray-800/30 backdrop-blur-lg overflow-hidden rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 group"
+            >
+              <div className="p-6">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">{metric.icon}</div>
+                  <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    {metric.icon}
+                  </div>
                   <div className="ml-5 w-0 flex-1">
                     <dl>
-                      <dt className="text-sm font-medium text-gray-500 truncate">{metric.title}</dt>
-                      <dd className="flex items-baseline">
-                        <div className="text-2xl font-semibold text-gray-900">{metric.value}</div>
+                      <dt className="text-sm font-medium text-gray-400 truncate group-hover:text-gray-300 transition-colors duration-300">
+                        {metric.title}
+                      </dt>
+                      <dd className="flex items-baseline mt-2">
+                        <div className="text-2xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+                          {metric.value}
+                        </div>
                         <div className={`ml-2 flex items-baseline text-sm font-semibold ${
-                          metric.change.startsWith('+') ? 'text-green-600' : 'text-red-600'
+                          metric.change.startsWith('+') ? 'text-green-400' : 'text-red-400'
                         }`}>
                           {metric.change}
                         </div>
@@ -156,33 +158,37 @@ export default function AnalyticsPage() {
         {/* Charts */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Session Trends */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">Session Trends</h2>
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4 hover:text-blue-400 transition-colors duration-300">
+              Session Trends
+            </h2>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={mockData.dailyStats}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" />
-                  <YAxis />
-                  <Tooltip />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                  <XAxis dataKey="date" stroke="#9CA3AF" />
+                  <YAxis stroke="#9CA3AF" />
+                  <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
                   <Legend />
-                  <Line type="monotone" dataKey="sessions" stroke="#3B82F6" />
-                  <Line type="monotone" dataKey="matchedIntents" stroke="#10B981" />
+                  <Line type="monotone" dataKey="sessions" stroke="#3B82F6" strokeWidth={2} />
+                  <Line type="monotone" dataKey="matchedIntents" stroke="#10B981" strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </div>
 
           {/* Top Intents */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">Top Intents</h2>
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4 hover:text-blue-400 transition-colors duration-300">
+              Top Intents
+            </h2>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={mockData.topIntents}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                  <XAxis dataKey="name" stroke="#9CA3AF" />
+                  <YAxis stroke="#9CA3AF" />
+                  <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
                   <Legend />
                   <Bar dataKey="count" fill="#6366F1" />
                 </BarChart>
@@ -191,25 +197,29 @@ export default function AnalyticsPage() {
           </div>
 
           {/* CSAT Trends */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">CSAT Trends</h2>
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4 hover:text-blue-400 transition-colors duration-300">
+              CSAT Trends
+            </h2>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={mockData.csatTrends}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" />
-                  <YAxis domain={[0, 5]} />
-                  <Tooltip />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                  <XAxis dataKey="date" stroke="#9CA3AF" />
+                  <YAxis domain={[0, 5]} stroke="#9CA3AF" />
+                  <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
                   <Legend />
-                  <Line type="monotone" dataKey="score" stroke="#10B981" />
+                  <Line type="monotone" dataKey="score" stroke="#10B981" strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </div>
 
           {/* Transfer Distribution */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">Agent Transfer Distribution</h2>
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4 hover:text-blue-400 transition-colors duration-300">
+              Agent Transfer Distribution
+            </h2>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -227,7 +237,7 @@ export default function AnalyticsPage() {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip />
+                  <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
                   <Legend />
                 </PieChart>
               </ResponsiveContainer>
@@ -235,15 +245,17 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Response Time Distribution */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">Response Time Distribution</h2>
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4 hover:text-blue-400 transition-colors duration-300">
+              Response Time Distribution
+            </h2>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={mockData.responseTimes}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="time" />
-                  <YAxis />
-                  <Tooltip />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                  <XAxis dataKey="time" stroke="#9CA3AF" />
+                  <YAxis stroke="#9CA3AF" />
+                  <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
                   <Legend />
                   <Bar dataKey="count" fill="#6366F1" />
                 </BarChart>
