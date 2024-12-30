@@ -8,13 +8,12 @@ import {
 
 // [Previous mockData object remains the same]
 const mockData = {
-  dailyStats: [
-    { date: '2023-07-01', sessions: 120, matchedIntents: 98, fallbacks: 22 },
-    { date: '2023-07-02', sessions: 145, matchedIntents: 125, fallbacks: 20 },
-    { date: '2023-07-03', sessions: 168, matchedIntents: 150, fallbacks: 18 },
-    { date: '2023-07-04', sessions: 189, matchedIntents: 170, fallbacks: 19 },
-    { date: '2023-07-05', sessions: 210, matchedIntents: 190, fallbacks: 20 },
-  ],
+  dailyStats: Array.from({ length: 30 }, (_, i) => ({
+    date: `2023-07-${String(i + 1).padStart(2, '0')}`,
+    sessions: Math.floor(Math.random() * 200) + 100,
+    matchedIntents: Math.floor(Math.random() * 180) + 80,
+    fallbacks: Math.floor(Math.random() * 30) + 10,
+  })),
   topIntents: [
     { name: 'Welcome Intent', count: 450 },
     { name: 'Product Inquiry', count: 380 },
@@ -22,13 +21,10 @@ const mockData = {
     { name: 'Pricing Questions', count: 280 },
     { name: 'Order Status', count: 250 },
   ],
-  csatTrends: [
-    { date: '2023-07-01', score: 4.2 },
-    { date: '2023-07-02', score: 4.5 },
-    { date: '2023-07-03', score: 4.3 },
-    { date: '2023-07-04', score: 4.6 },
-    { date: '2023-07-05', score: 4.7 },
-  ],
+  csatTrends: Array.from({ length: 30 }, (_, i) => ({
+    date: `2023-07-${String(i + 1).padStart(2, '0')}`,
+    score: (Math.random() * 2 + 3).toFixed(1),
+  })),
   transferDistribution: [
     { name: 'Self Served', value: 785 },
     { name: 'Technical Support', value: 120 },
