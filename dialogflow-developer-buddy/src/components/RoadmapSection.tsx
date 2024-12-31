@@ -49,7 +49,7 @@ const RoadmapSection = () => {
     }
   ];
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "In Progress":
         return "bg-green-500";
