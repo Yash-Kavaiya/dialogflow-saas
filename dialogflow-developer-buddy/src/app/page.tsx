@@ -79,76 +79,77 @@ export default function Home() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
             <div className="text-center">
               {/* Main Heading */}
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
-                     shadow-lg hover:shadow-blue-500/50 transition-shadow duration-300 animate-pulse">
-                  Dialogflow Development
-                </span>
-                <span className="block text-white mt-2 
-                     hover:text-blue-400 transition-colors duration-300 
-                     hover:glow-blue-500 animate-bounce">
-                  Made Simple
-                </span>
-                </h1>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+               shadow-lg hover:shadow-blue-500/50 transition-shadow duration-300 animate-pulse
+               hover:text-blue-400">
+            Dialogflow Development
+            </span>
+            <span className="block text-white mt-2 
+               hover:text-blue-400 transition-colors duration-300 
+               hover:glow-blue-500 animate-fade-in-out">
+            Made Simple
+            </span>
+          </h1>
 
               {/* Description */}
-              <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-300 leading-relaxed">
-                Build, test, and deploy your Dialogflow chatbots faster with our comprehensive suite of development tools.
-              </p>
 
               {/* CTA Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={() => router.push('/login')}
-                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 
-                           text-white font-medium transition-all duration-300 
-                           hover:from-blue-600 hover:to-purple-700
-                           transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25
-                           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900
-                           flex items-center justify-center gap-2"
-                >
-                  Get Started
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                
-                <a
-                  href="https://github.com/Yash-Kavaiya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-3 rounded-lg border border-gray-600 
-                           text-gray-300 font-medium transition-all duration-300
-                           hover:bg-gray-800 hover:border-gray-500
-                           transform hover:scale-105
-                           focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900
-                           flex items-center justify-center gap-2"
-                >
-                  <FaGithub className="w-5 h-5" />
-                  View on GitHub
-                </a>
+          <button 
+            onClick={() => router.push('/login')}
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 
+               text-white font-medium transition-all duration-300 
+               hover:from-blue-600 hover:to-purple-700
+               transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25
+               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900
+               flex items-center justify-center gap-2
+               animate-fade-in-out"
+          >
+            Get Started
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          
+          <a
+            href="https://github.com/Yash-Kavaiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-lg border border-gray-600 
+               text-gray-300 font-medium transition-all duration-300
+               hover:bg-gray-800 hover:border-gray-500
+               transform hover:scale-105
+               focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900
+               flex items-center justify-center gap-2
+               animate-fade-in-out"
+          >
+            <FaGithub className="w-5 h-5" />
+            View on GitHub
+          </a>
               </div>
 
               {/* Stats */}
               <div className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-4">
-                {[
-                  { label: 'Active Users', value: '50+' },
-                  { label: 'Test Cases Run', value: '1k+' },
-                  { label: 'Intents Generated', value: '5k+' },
-                  { label: 'Github Stars', value: '1+' },
-                ].map((stat, index) => (
-                  <div 
-                    key={index}
-                    className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50
-                             transform hover:scale-105 transition-all duration-300
-                             hover:border-blue-500/50 group"
-                  >
-                    <dt className="text-gray-400 text-sm font-medium mb-2">
-                      {stat.label}
-                    </dt>
-                    <dd className="text-2xl font-bold text-white">
-                      {stat.value}
-                    </dd>
-                  </div>
-                ))}
+          {[
+            { label: 'Active Users', value: '50+' },
+            { label: 'Test Cases Run', value: '1k+' },
+            { label: 'Intents Generated', value: '5k+' },
+            { label: 'Github Stars', value: '1+' },
+          ].map((stat, index) => (
+            <div 
+              key={index}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50
+                 transform hover:scale-105 transition-all duration-300
+                 hover:border-blue-500/50 group animate-fade-in-out
+                 hover:shadow-lg hover:shadow-blue-500/25"
+            >
+              <dt className="text-gray-400 text-sm font-medium mb-2">
+                {stat.label}
+              </dt>
+              <dd className="text-2xl font-bold text-white">
+                {stat.value}
+              </dd>
+            </div>
+          ))}
               </div>
             </div>
           </div>

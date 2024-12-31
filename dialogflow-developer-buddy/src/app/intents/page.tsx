@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import IntentForm from '@/components/IntentForm';
 import { SparklesIcon } from 'lucide-react';
@@ -43,7 +45,6 @@ export default function IntentsPage() {
           <IntentForm />
         </div>
       </div>
-      
     </div>
   );
 }

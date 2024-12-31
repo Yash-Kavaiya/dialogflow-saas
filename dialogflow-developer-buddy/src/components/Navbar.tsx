@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 import { 
   Home,
   MessageSquare,
@@ -19,7 +18,6 @@ import {
 
 const Navbar = () => {
   const pathname = usePathname();
-  const { data: session, status } = useSession();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -33,6 +31,10 @@ const Navbar = () => {
     { name: 'Analytics', path: '/analytics', icon: <BarChart2 className="w-4 h-4" /> },
     { name: 'Test Suite', path: '/testsuite', icon: <TestTube2 className="w-4 h-4" /> }
   ];
+
+  const handleNavigation = (path: string) => {
+    setIsMobileMenuOpen(false); // Close mobile menu when navigating
+  };
 
   return (
     <nav className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-3 border-b border-gray-800/50">
@@ -119,7 +121,7 @@ const Navbar = () => {
                     ${pathname === item.path
                       ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400'
                       : 'text-gray-400 hover:text-blue-400 hover:bg-blue-500/10'}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => handleNavigation(item.path)}
                 >
                   {item.icon}
                   <span>{item.name}</span>
