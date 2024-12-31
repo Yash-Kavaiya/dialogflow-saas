@@ -97,7 +97,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <button 
-            onClick={() => router.push('/login')}
+            onClick={() => router.push('/intents')}
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 
                text-white font-medium transition-all duration-300 
                hover:from-blue-600 hover:to-purple-700

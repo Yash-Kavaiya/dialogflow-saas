@@ -25,7 +25,7 @@ export default function SponsorPage() {
     {
       title: "PayPal",
       icon: <FaPaypal className="w-6 h-6" />,
-      link: "mailto:arkavaiya@gmail.com",
+      link: "https://paypal.me/yashkavaiya",
       description: "Send support via PayPal",
       buttonText: "Support via PayPal",
       bgGradient: "from-indigo-600 to-indigo-700"
@@ -74,7 +74,7 @@ export default function SponsorPage() {
           
           {/* GitHub Profile */}
           <a 
-            href="https://github.com/Yash-Kavaiya" 
+            href="https://github.com/Yash-Kavaiya/dialogflow-saas" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-800 text-gray-200 
