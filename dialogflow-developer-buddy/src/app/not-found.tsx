@@ -7,28 +7,28 @@ export default function NotFound() {
 
   const socialLinks = [
     {
-      icon: <FaGithub className="w-6 h-6" />,
+      icon: <FaGithub className="w-6 h-6  text-blue-500" />,
       href: "https://github.com/Yash-Kavaiya",
       label: "GitHub",
-      bgClass: "hover:bg-gray-700"
+      bgClass: "hover:bg-white"
     },
     {
-      icon: <FaLinkedin className="w-6 h-6" />,
+      icon: <FaLinkedin className="w-6 h-6  text-blue-500" />,
       href: "https://linkedin.com/in/yash-kavaiya",
       label: "LinkedIn",
-      bgClass: "hover:bg-blue-700"
+      bgClass: "hover:bg-white"
     },
     {
-      icon: <FaTwitter className="w-6 h-6" />,
+      icon: <FaTwitter className="w-6 h-6  text-blue-500" />,
       href: "https://twitter.com/yash_kavaiya",
       label: "Twitter",
-      bgClass: "hover:bg-sky-600"
+      bgClass: "hover:bg-white"
     },
     {
-      icon: <FaEnvelope className="w-6 h-6" />,
+      icon: <FaEnvelope className="w-6 h-6  text-blue-500 " />,
       href: "mailto:arkavaiya@gmail.com",
       label: "Email",
-      bgClass: "hover:bg-red-600"
+      bgClass: "hover:bg-white"
     }
   ];
 
