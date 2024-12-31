@@ -32,12 +32,8 @@ const Navbar = () => {
     { name: 'Test Suite', path: '/testsuite', icon: <TestTube2 className="w-4 h-4" /> }
   ];
 
-  const handleNavigation = (path: string) => {
-    setIsMobileMenuOpen(false); // Close mobile menu when navigating
-  };
-
   return (
-    <nav className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-3 border-b border-gray-800/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-3 border-b border-gray-800/50">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
       
@@ -46,7 +42,11 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="group flex items-center space-x-3 text-white no-underline min-w-fit">
+          <Link 
+            href="/" 
+            className="group flex items-center space-x-3 text-white no-underline min-w-fit"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300" />
               <img
@@ -70,10 +70,12 @@ const Navbar = () => {
                 <li key={item.path} className="whitespace-nowrap">
                   <Link
                     href={item.path}
-                    className={`group flex items-center space-x-1.5 px-3 py-2 rounded-lg transition-all duration-200 text-sm
+                    passHref
+                    className={`group flex items-center space-x-1.5 px-3 py-2 rounded-lg transition-all duration-200 text-sm cursor-pointer
                       ${pathname === item.path 
                         ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400' 
                         : 'text-gray-400 hover:text-blue-400 hover:bg-blue-500/10'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span className="transform group-hover:scale-110 transition-transform duration-200">
                       {item.icon}
@@ -98,11 +100,14 @@ const Navbar = () => {
 
             <Link
               href="/login"
+              passHref
               className="hidden lg:inline-flex items-center px-4 py-2 rounded-lg 
                 bg-gradient-to-r from-blue-500 to-purple-600 
                 text-white font-medium transition-all duration-300 text-sm
                 hover:from-blue-600 hover:to-purple-700
-                transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+                transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25
+                cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Login
             </Link>
@@ -117,11 +122,12 @@ const Navbar = () => {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-base font-medium transition-all duration-200
+                  passHref
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-base font-medium transition-all duration-200 cursor-pointer
                     ${pathname === item.path
                       ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400'
                       : 'text-gray-400 hover:text-blue-400 hover:bg-blue-500/10'}`}
-                  onClick={() => handleNavigation(item.path)}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.icon}
                   <span>{item.name}</span>
@@ -129,11 +135,12 @@ const Navbar = () => {
               ))}
               <Link
                 href="/login"
+                passHref
                 className="flex items-center justify-center mt-4 px-6 py-2 rounded-lg
                   bg-gradient-to-r from-blue-500 to-purple-600 
                   text-white font-medium transition-all duration-300
                   hover:from-blue-600 hover:to-purple-700
-                  transform hover:scale-105"
+                  transform hover:scale-105 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Login
