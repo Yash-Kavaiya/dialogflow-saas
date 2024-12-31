@@ -39,6 +39,25 @@ export default function EntitiesPage() {
       setLoading(false);
     }
   };
+  const examples = [
+    {
+      text: "Book a flight from New York to London on December 25th for 2 adults",
+      description: "Travel booking with dates and locations"
+    },
+    {
+      text: "Set a reminder to call John at 3 PM tomorrow about the project proposal",
+      description: "Task scheduling with time and contact"
+    },
+    {
+      text: "Find Italian restaurants in Chicago with a price range of $30-50 per person",
+      description: "Restaurant search with location and price"
+    }
+  ];
+
+  const loadExample = (example: typeof examples[0]) => {
+    setInputText(example.text);
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
