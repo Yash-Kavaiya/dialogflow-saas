@@ -132,7 +132,7 @@ export default function DebugPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" mt-10 min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
       <div className="relative max-w-5xl mx-auto">
         <div className="flex items-center justify-between mb-8">

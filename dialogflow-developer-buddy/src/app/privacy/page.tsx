@@ -76,7 +76,7 @@ export default function Privacy() {
   const lastUpdated = '2024-01-15';
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="mt-10 min-h-screen bg-gray-50 flex flex-col">
       <main className="flex-grow">
         {/* Header Section */}
         <div className="bg-white">

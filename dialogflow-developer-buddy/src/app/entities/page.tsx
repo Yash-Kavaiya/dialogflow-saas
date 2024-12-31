@@ -60,7 +60,7 @@ export default function EntitiesPage() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="mt-8 min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
       

@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="mt-12 min-h-screen bg-gray-50 flex flex-col">
       <main className="flex-grow">
         {/* Header Section */}
         <div className="bg-white">

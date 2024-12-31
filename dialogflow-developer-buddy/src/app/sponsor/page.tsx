@@ -57,7 +57,7 @@ export default function SponsorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-8">
+    <div className="mt-12 min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-8">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
       

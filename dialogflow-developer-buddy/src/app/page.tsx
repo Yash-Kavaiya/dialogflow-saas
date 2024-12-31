@@ -81,7 +81,7 @@ export default function Home() {
               {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8">
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
-               shadow-lg hover:shadow-blue-500/50 transition-shadow duration-300 animate-pulse
+               shadow-lg duration-300 animate-pulse
                hover:text-blue-400">
             Dialogflow Development
             </span>
