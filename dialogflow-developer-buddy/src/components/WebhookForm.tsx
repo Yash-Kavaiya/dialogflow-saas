@@ -262,7 +262,7 @@ const WebhookForm: React.FC = () => {
                     ) : (
                       <>
                         <FaCopy className="mr-2" />
-                        Copy Code
+                        {/* copy */}
                       </>
                     )}
                   </button>
@@ -272,7 +272,7 @@ const WebhookForm: React.FC = () => {
                              bg-blue-500/10 hover:bg-blue-500/20 rounded-lg transition-all duration-300"
                   >
                     <FaDownload className="mr-2" />
-                    Download Code
+                    {/* Download */}
                   </button>
                 </div>
               </div>
