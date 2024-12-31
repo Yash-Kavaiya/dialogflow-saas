@@ -93,6 +93,9 @@ export default function Home() {
           </h1>
 
               {/* Description */}
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Simplify your Dialogflow development process with our suite of powerful tools and features. Whether you're generating intents, creating routes, or analyzing performance, we've got you covered.
+              </p>
 
               {/* CTA Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
