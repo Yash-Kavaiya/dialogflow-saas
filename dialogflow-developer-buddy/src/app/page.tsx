@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import FeatureCard from '@/components/FeatureCard';
 import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
+import RoadmapSection from '@/components/RoadmapSection';
 
 interface Feature {
   icon: JSX.Element;
@@ -238,6 +239,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Roadmap Section */}
+        <RoadmapSection />
       </main>
 
       {/* Footer with Proper Spacing */}

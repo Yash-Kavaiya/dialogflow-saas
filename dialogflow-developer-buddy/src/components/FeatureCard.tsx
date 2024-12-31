@@ -10,7 +10,7 @@ interface FeatureCardProps {
   link?: string;  // Add the link prop as optional
 }
 
-const FeatureCard: FC<FeatureCardProps> = ({ icon, title, description, className }) => {
+const FeatureCard: FC<FeatureCardProps> = ({ icon, title, description, className, link }) => {
   return (
     <div className={`relative flex flex-col h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl overflow-hidden ${className}`}>
       {/* Hover Effects Container */}
